@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<table>
+<tbody>
+{%for object in object_list%}
+<div class="col-md-4 portfolio-item">
+    <a href="{% url 'product_detail' object.pk %}">
+        <img class="img-responsive" src="{{ object.image.url }}" alt="Responsive image">
+    </a>
+    <h3>
+        <a href="{% url 'product_detail' object.pk %}">{{ object.name }}</a>
+    </h3>
+    <h3> $ {{ object.price }} </h3>
+    <h4>{{ object.brand }}</h4>
+    <button type="submit" class="btn btn-success">Buy</button>
+ </div>
+ {% endfor %}
+</tbody>
+</table>
+{% endblock %}

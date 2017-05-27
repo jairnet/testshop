@@ -1,0 +1,19 @@
+
+{% extends 'base/base.html' %}
+{% block content %}
+<table>
+<div class="col-md-8 portfolio-item">
+	{% if object.image %}
+		<a><img alt="Responsive image" class="img-responsive" src="{{ object.image.url }}"></a>
+	{% endif %}
+		<h3>{{ object.name }}</h3>
+		<h3>{{ object.brand }}</h3>
+		<h4>$ {{ object.price }}</h4>
+		<h4>{{ object.vendor }}</h4>
+		<p>{{ object.description }}</p>
+		<button type="button" class="btn btn-success">Buy</button>
+	</tr>
+</div>
+</table>
+<a href="{% url 'products' %}">All Products</a>
+{%endblock%}
