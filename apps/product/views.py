@@ -18,4 +18,4 @@ class ProductCreate(CreateView):
 	model = Product
 	form_class = ProductForm
 	temaplete_name = "product/product_form.html"
-	success_url=reverse_lazy("products")
+	success_url=reverse_lazy("product_detail")
